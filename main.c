@@ -1,88 +1,53 @@
 #include <stdio.h>
 
 int main() {
+    int N;
 
-    // 1. MENGHITUNG GAJI BERSIH, TUNJANGAN, PAJAK
+    // Input dari pengguna
+    printf("Masukkan durasi jam misi: ");
+    scanf("%d", &N);
 
-    // char nama [100];
-    // int gajiPokok, gajiBersih, gajiKotor;
-    // float tunjangan, pajak;
-    // printf("Masukan nama anda!");
-    // scanf("%s", &nama);
-    // printf("Masukan nominal gaji anda!");
-    // scanf("%d", &gajiPokok);
-    // gajiKotor = tunjangan + gajiPokok;
-    // tunjangan = 0.2 * gajiPokok;
-    // pajak = 0.15 * gajiKotor;
-    // gajiBersih = gajiBersih - pajak;
-    // printf("Gaji Bersih %s adalah %d per bulan", nama, gajiBersih);
-    // return 0;
+    // Validasi input
+    if (N == 0) {
+        printf("Input salah\n");
+        return 0;
+    }
 
-    // 2. DISKON 
+    int total = 0;
 
-    // float orignalPrice, percengace, finalPrice;
-    // printf("What is the price?");
-    // scanf("%f", &orignalPrice);
-    // printf("Input the percentage of discound!");
-    // scanf("%f", &percengace);
-    // finalPrice = orignalPrice - (orignalPrice * percengace/100);
-    // printf("The final price of your product is %2.f", finalPrice);
-    // return 0;
+    printf("\n=== Detail Misi Goa Mebius ===\n");
 
+    for (int jam = 1; jam <= N; jam++) {
+        int perJam = 15 + 9 + 6; // Tanjiro + Zenitsu + Inosuke = 30
+        printf("Jam ke-%d: ", jam);
 
-    // 3. NGITUNG KWH
+        // Aura Kebijaksanaan (jam 6 & 12)
+        if (jam == 6 || jam == 12) {
+            perJam += 20;
+            printf("Aura Kebijaksanaan → Tanjiro mendapat bonus +20 kristal.\n");
+        }
+        // Aura Kemarahan (ganjil & kelipatan 3)
+        else if (jam % 2 == 1 && jam % 3 == 0) {
+            perJam += 10;
+            printf("Aura Kemarahan → Zenitsu kehilangan bonus, Inosuke mendapat +10 kristal.\n");
+        }
+        // Aura Puncak (jam ganjil biasa)
+        else if (jam % 2 == 1) {
+            perJam += 5;
+            printf("Aura Puncak → Zenitsu merasakan aura kuat dan mendapat +5 kristal.\n");
+        }
+        // Jam genap biasa (tidak ada aura khusus)
+        else {
+            printf("Tidak ada aura khusus, tim bekerja normal.\n");
+        }
 
-    // int kwh, totalBiaya;
-    // const int hargaKwh = 1500;
-    // const int biayaAdm = 20000;
+        total += perJam;
+    }
 
-    // printf("Berapa biaya kwh penggunaan listrik Anda?");
-    // scanf("%d", &kwh);
-    // totalBiaya = kwh * hargaKwh + biayaAdm;
-    // printf("Tagihan listrk anda untuk %d adalah Rp %d", totalBiaya);
-    // return 0;
+    // Output total
+    printf("\nTotal Kristal Mebius yang dikumpulkan: %d\n", total);
 
-    // 4. Ngitung tabungan
+    return 0;
 
-    // float tabunganMingguan, jumlahMinggu;
-    // const int hargaSepeda = 1500000;
-
-    // printf("Berapa tabungan anda perminggu?");
-    // scanf("%f", &tabunganMingguan);
-    // jumlahMinggu = hargaSepeda / tabunganMingguan;
-    // printf ("jumlah minggu yang diperlukan adalah %.0f jika tabungan anda %.0f", jumlahMinggu, tabunganMingguan);
-
-    // return 0;
-
-    //5. Ngitung uang sisa
-
-    // const int totalHadiah = 5000000;
-    // int jumlahPemenang;
-    // float uangDiterima, uangSisa;
-
-    // printf("Berapakah jumlah orang pada tim Anda?");
-    // scanf("%d", &jumlahPemenang);
-    // uangSisa = totalHadiah % jumlahPemenang;
-    // uangDiterima = (totalHadiah - uangSisa) / jumlahPemenang;
-    // printf("Jika jumlah pemenang %d, maka setiap orang mendapatkan Rp %.3f dengan sisa Rp %.0f", jumlahPemenang, uangDiterima, uangSisa);
-
-    // return 0;
-
-    // 6. Ngitung sisa proyek
-
-    // int hari, bulan, sisaHari, tahun;
-    // printf ("Masukan sisa hari pengerjaan proyek: ");
-    // scanf("%d", &hari);
-    // tahun = hari / 365;
-    // sisaHari = hari % 365;
-    // bulan = sisaHari / 30;
-    // hari = sisaHari % 30;
-
-    // printf ("Proyek dikerjakan selama %d tahun, %d bulan, %d hari", tahun, bulan, hari);
-
-    // return 0;
-
-    w
-
-
+    
 }
